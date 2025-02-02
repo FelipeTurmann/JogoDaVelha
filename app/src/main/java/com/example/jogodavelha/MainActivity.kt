@@ -121,6 +121,12 @@ fun Quadrado(
     value: String,
     onClick: () -> Unit
 ) {
+    val color = when (value) {
+        "X" -> androidx.compose.ui.graphics.Color.Blue
+        "O" -> androidx.compose.ui.graphics.Color.Red
+        else -> GRENN
+    }
+
     Box(
         modifier = Modifier
             .size(100.dp)
@@ -132,7 +138,7 @@ fun Quadrado(
         Text(
             text = value,
             style = MaterialTheme.typography.headlineMedium,
-            color = GRENN,
+            color = color,
             fontWeight = FontWeight.ExtraBold
         )
     }
