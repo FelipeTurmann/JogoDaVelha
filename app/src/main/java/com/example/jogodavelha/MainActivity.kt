@@ -96,7 +96,11 @@ fun JogoDaVelha() {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                text = vencedor?.let { "Vencedor foi o: $it" } ?: "Vez do jogador: $jogadorAtual",
+                text = when (vencedor) {
+                    "DEU VELHA!" -> "DEU VELHA!"
+                    null -> "Vez do jogador: $jogadorAtual"
+                    else -> "Vencedor foi o: $vencedor"
+                },
                 style = MaterialTheme.typography.headlineMedium,
                 modifier = Modifier.padding(bottom = 16.dp)
             )
